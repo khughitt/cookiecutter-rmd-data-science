@@ -1,0 +1,42 @@
+---
+title: "{{cookiecutter.project_name}}: Model Training"
+author: "{{cookiecutter.name}}"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+---
+
+# Overview
+
+# Setup
+
+```{r load_settings}
+settings <- yaml::read_yaml('config/settings.yml')
+```
+
+```{r knitr_options, include = FALSE}
+# knitr options
+opts_chunk$set(fig.width = settings$fig_width, fig.height = settings$fig_height, 
+               dpi = settings$fig_dpi, fig.retina = settings$fig_retina, error = FALSE)
+opts_knit$set(verbose = settings$verbose)
+opts_knit$set(root.dir = normalizePath(getwd()))
+
+# support for complex table output
+options(knitr.duplicate.label = 'allow')
+```
+
+```{r child='rmd/setup.Rmd'}
+```
+
+# Methods & Results
+
+# References
+
+# System information
+
+```{r session_info}
+sessionInfo()
+```
+
+```{r git_commit}
+system('git rev-parse --short HEAD', intern = TRUE)
+```
+

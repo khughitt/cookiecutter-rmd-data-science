@@ -1,0 +1,30 @@
+#
+# {{cookiecutter.project_name}} settings
+#
+
+#
+# General
+#
+version: '{% now "local", "%Y.%m.%d" %}'
+output_dir: ''
+random_seed: 1
+max_threads: Inf
+
+#
+# Debugging
+#
+verbose: true
+dev_mode: false
+
+#
+# Data
+#
+
+
+#
+# Appearance
+#
+fig_width: 3
+fig_height: 3
+fig_dpi: 300
+fig_retina: 1

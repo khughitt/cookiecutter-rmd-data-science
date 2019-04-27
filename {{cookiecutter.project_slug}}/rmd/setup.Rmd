@@ -1,0 +1,28 @@
+```{r load_libraries, message = FALSE}
+library(tidyverse)
+```
+
+```{r other_setup, message = FALSE}
+# set random seed to increase reproducibility; 
+set.seed(settings$random_seed)
+
+# use strings instead of factors by default
+options(stringsAsFactors = FALSE)
+
+# determine number of threads to use for parallelized operations
+num_threads <- max(1, min(detectCores() - 1, as.numeric(settings$max_threads), na.rm = TRUE))
+message(sprintf("Using up to %d threads for parralel operations", num_threads))
+
+# for development, just use a small subset of the data
+if (DEV_MODE) {
+  message("[DEV] Development mode enabled...")
+}
+```
+
+```{r ggplot_hires_theme}
+theme_bw_high_res <- function (base_size = 11, base_line_size = 0.5) { 
+	theme_bw(base_size = base_size) %+replace% 
+    theme(plot.title = element_text(size = 9, vjust = 0), 
+          legend.text = element_text(size = 8))
+}
+```

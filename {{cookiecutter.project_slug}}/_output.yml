@@ -1,0 +1,11 @@
+html_document:
+  toc: true
+  toc_depth: 4
+  number_sections: true
+  df_print: kable
+pdf_document:
+  toc: true
+  toc_depth: 4
+  number_sections: true
+  df_print: kable
+  latex_engine: xelatex

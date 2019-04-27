@@ -1,0 +1,6 @@
+{
+    "name": "Your name",
+    "email": "Email address",
+    "project_name": "Project Name",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}"
+}
